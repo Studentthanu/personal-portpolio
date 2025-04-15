@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: blue;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --accent-color: cyan;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background: black;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon-img {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+        border-radius: 50%;
+     }
+
+        .icon-img:hover {
+        transform: scale(1.1);
+    }
+        button {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        .skills {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill span {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--accent-color, #00ff2ac5);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project a {
+            display: block;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #contact {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #contact form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #contact input, #contact textarea {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+    }
+
+    #contact button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    #contact button:hover {
+        background-color: #0056b3;
+    }
+
+    #formMessage {
+        font-weight: bold;
+        color: green;
+    }
+
+
+        footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #222;
+        color: #fff;
+        margin-top: 10px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <section id="home" style="text-align: center; padding: 60px 20px; ">
+        <img src="thanu.jpg" alt="Your Photo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h1 style="margin-top: 20px;">Thanushree G S</h1>
+        <p style="max-width: 600px; margin: 0 auto;">
+            Hi, I’m thanu, a passionate Software Development student with a strong foundation in programming, problem-solving, and building real-world applications.
+            I’m constantly exploring new technologies and expanding my skill set in areas like web development, mobile apps, and software engineering principles. My goal is to create clean, efficient, and user-friendly solutions that make an impact.
+        </p>
+    
+        <div class="social-icons" style="margin-top: 20px;">
+            <a href="https://github.com/DinakarGonchigar" target="_blank" title="GitHub">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" class="icon-img">
+            </a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" title="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon-img">
+            </a>
+        </div>
+    </section>
+
+    <section id="about">
+       <h2>About Me</h2>
+    <p>
+        Hi, I’m thanu, a passionate Software Development student with a strong foundation in programming, problem-solving, and building real-world applications.
+I’m constantly exploring new technologies and expanding my skill set in areas like web development, mobile apps, and software engineering principles. My goal is to create clean, efficient, and user-friendly solutions that make an impact.
+<br>This portfolio showcases the projects I’ve worked on so far, along with my journey as I grow into a well-rounded developer ready to take on real-world challenges.
+
+    
+</p>
+
+    <h3>Skills</h3>
+    <p>Here are some of my technical skills:</p>
+    <div class="skills">
+        <div class="skill">
+            <span>java full stack</span>
+            <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+        </div>
+        <div class="skill">
+            <span>Machine learning</span>
+            <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+        </div>
+        <div class="skill">
+            <span>Ai with Deep Learning</span>
+            <div class="progress-bar"><div class="progress" data-width="87%"></div></div>
+        </div>
+    <h3>Education</h3>
+    <p>
+        🎓 Master's Degree in Computer Science - P.E.S College of Engineering,Mandya,Karnataka (Graduating in 2025) <br>
+        🎓 Bachelor's Degree in Computer Science - sapient,Mysore,Karnataka (Graduated in 2023)  <br>
+    </p>
+    <h3>Interests</h3>
+    <p>
+        Build Passion Projects – Apps, games, websites, tools. Anything that solves your own problem or is just fun.<br>
+
+        Contribute to Open Source – Great for collaboration, exposure, and learning best practices.<br>
+        
+        Learn New Frameworks or Languages – Explore something out of your usual stack (Rust, Svelte, Flutter, etc.).<br>
+        
+        Join Coding Challenges – LeetCode, Codewars, Advent of Code, or 100 Days of Code.<br>
+    </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project">
+                <img src="blue black team.png" alt="Project 1">
+                <h3>Blue Black Team Website</h3>
+                <p>A sleek and modern team landing page featuring team members, project highlights, and a contact section. Built with HTML5, CSS3, and JavaScript.</p>
+                <a href="https://github.com/DinakarGonchigar/blue-black-team" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <img src="voiceatm.jpg" alt="Project 2">
+                <h3>Voice assisted atm machine</h3>
+                <p>A ATM machine which talks to the user for the transaction. Very helpfull for the blind r handicaps</p>
+                <a href="https://github.com/DinakarGonchigar" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <img src="ai project.jpg" alt="Project 3">
+                <h3>Ai user activity analysis</h3>
+                <p>A Ai project for the user analysis based on there social activities.</p>
+                <a href="https://github.com/DinakarGonchigar" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="formMessage"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Thanushree G S. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            if (localStorage.getItem("theme") === "dark") {
+                body.classList.add("dark-mode");
+                themeToggle.textContent = "☀️ Light Mode";
+            }
+
+            themeToggle.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("theme", "dark");
+                    themeToggle.textContent = "☀️ Light Mode";
+                } else {
+                    localStorage.setItem("theme", "light");
+                    themeToggle.textContent = "🌙 Dark Mode";
+                }
+            });
+            function ProgressBars() {
+            const bars = document.querySelectorAll(".progress");
+            bars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+                if (isVisible && !bar.classList.contains("animated")) {
+                    bar.style.width = bar.dataset.width;
+                    bar.classList.add("animated");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", ProgressBars);
+        window.addEventListener("load", ProgressBars);
+            document.querySelectorAll("nav ul li a").forEach(anchor => {
+                anchor.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const formMessage = document.getElementById("formMessage");
+
+        if (!name || !email || !message) {
+            formMessage.textContent = "Please fill in all fields.";
+            formMessage.style.color = "red";
+        } else {
+            formMessage.textContent = "Message sent successfully!";
+            formMessage.style.color = "green";
+            document.getElementById("contactForm").reset();
+        }
+    });
+        });
+    </script>
+
+</body>
+</html>
